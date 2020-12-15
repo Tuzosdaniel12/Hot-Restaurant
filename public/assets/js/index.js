@@ -34,10 +34,10 @@ $("#add-res").on("click", (e) =>{
     e.preventDefault()
 
     const newRes = {
-        name : $("#name").val().trim(),
-        phoneNumber : $("#phone-number").val().trim(),
-        email : $("#email").val().trim(),
-        uniqueID : $("unique-id").val().trim(),
+        name : $("#reserve_name").val().trim(),
+        phoneNumber : $("#reserve_phone").val().trim(),
+        email : $("#reserve_email").val().trim(),
+        uniqueID : $("reserve_uniqueID").val().trim(),
     } 
 
     $.post("/api/reserve/", newRes)
