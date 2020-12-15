@@ -2,20 +2,20 @@
 $.get("/api/tables/", (data) =>{
     console.log(data);
     if(data){
-        data.forEach(d, index=> {
-           const li = $("<li>").text(`${index+1} ${d.name}`)
-           $("#appendResList").append(li)
-        });
+        for(let i = 0; i < data.length; i++){
+            const li = $("<li>").text(`${i+1} ${data.name}`)
+            $("#appendRestList").append(li)
+            }
     }
 });
 
 $.get("/api/tables/", (data) =>{
     console.log(data);
     if(data){
-        data.forEach(d, index=> {
-           const li = $("<li>").text(`${index+1} ${d.name}`)
-           $("#appendWaitList").append(li)
-        });
+        for(let i = 0; i < data.length; i++){
+        const li = $("<li>").text(`${i+1} ${data.name}`)
+        $("#appendWaitList").append(li)
+        }
     }
 });
 
@@ -37,10 +37,10 @@ $("#add-res").on("click", (e) =>{
         name : $("#reserve_name").val().trim(),
         phoneNumber : $("#reserve_phone").val().trim(),
         email : $("#reserve_email").val().trim(),
-        uniqueID : $("reserve_uniqueID").val().trim(),
+        uniqueID : $("#reserve_uniqueID").val().trim(),
     } 
 
-    $.post("/api/reserve/", newRes)
+    $.post("/reserve/", newRes)
         .then((data) => console.log("test.html", data));
 })
 
