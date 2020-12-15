@@ -2,10 +2,11 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 let tables=[];
 let waitList=[];
@@ -13,17 +14,17 @@ let waitList=[];
 
 app.get("/", function(req, res) {
 
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "./assets/index.html"));
   });
 
 app.get("/tables", function(req, res) {
 
-    res.sendFile(path.join(__dirname, "tables.html"));
+    res.sendFile(path.join(__dirname, "./assets/tables.html"));
   });
 
 app.get("/reserve", function(req, res) {
 
-    res.sendFile(path.join(__dirname, "reserve.html"));
+    res.sendFile(path.join(__dirname, "./assets/reserve.html"));
   });
 
 app.get("/api/tables",function(req,res){
