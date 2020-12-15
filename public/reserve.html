@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,79 @@
     <title>Tables</title>
 
     <!-- Bootstrap and jquery -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 </head>
+
 <body>
     <div class="container">
-        <div class="jumbotron text-center">
-            <h1 class="display-4 ">Hot Restaurant</h1>
+        <div class="jumbotron">
+            <h1 class="display-4 text-center ">
+                <span class="glyphicon glyphicon-fire"></span>
+                Hot Restaurant</h1>
+
             <hr class="my-4">
-            <p class="display-5 ">Current Reservations and Waiting List List</p>
+            <p class="display-5 text-center " style="font-size:35px">Make your reservation</p>
 
+            <div class="lead text-center">
+                <a class="btn btn-primary btn-lg">
+                    <span class="glyphicon glyphicon-list-alt"></span>
 
-            <div class="container">
-                <a class="btn btn-primary btn-lg" href="/tables" role="button"><i class="bi bi-credit-card"></i>View Tables</a>
-            
-                <a class="btn btn-primary btn-lg" href="/" role="button">Home</a> 
-            </div>  
-          </div>
+                    View Tables</a>
+                <a href=" /tables" role="button"><i class="bi bi-credit-card"></i>
+                </a>
+                <a class="btn btn-primary btn-lg btn-default">
+                    <span class="glyphicon glyphicon-home"></span>
+                    <a href="/" role="button"></a>
+                </a>
+            </div>
+        </div>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
+        <div class="col-lg-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" style="font-size:25px">Table Reservation</h4>
+                </div>
+                <div class="panel-body">
+
+                    <form role="form">
+
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text" class="form-control" id="reserve_name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Phone Number</label>
+                            <input type="text" class="form-control" id="reserve_phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="text" class="form-control" id="reserve_email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Unique ID</label>
+                            <input type="text" class="form-control" id="reserve_uniqueID">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+        <a class="API Table List" href="/api/tables">API Table Link</a>
+        <a class="API Wait List" href="/api/waitlist">API Wait List</a>
     </div>
 
 
-
-    
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="/assets/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/assets/js/index.js"></script>
 </body>
+
 </html>
