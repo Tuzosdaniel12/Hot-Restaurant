@@ -14,17 +14,17 @@ let waitList=[];
 
 app.get("/", function(req, res) {
 
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "./public/index.html"));
   });
 
 app.get("/tables", function(req, res) {
 
-    res.sendFile(path.join(__dirname, "tables.html"));
+    res.sendFile(path.join(__dirname,"./public/tables.html"));
   });
 
 app.get("/reserve", function(req, res) {
 
-    res.sendFile(path.join(__dirname, "reserve.html"));
+    res.sendFile(path.join(__dirname, "./public/reserve.html"));
   });
 
 app.get("/api/tables",function(req,res){
@@ -47,10 +47,11 @@ app.post("/reserve",function(req,res){
     
   }); 
 
-
-
-
-
+  app.post("/api/clear", function(req,res){
+      tables.empty();
+      waitList.empty();
+      res.json("Tables Cleared");
+  })
 
 
 app.listen(PORT, function() {
