@@ -47,6 +47,12 @@ app.post("/reserve",function(req,res){
     
   }); 
 
+  app.post("/api/clear", function(req,res){
+      tables.empty();
+      waitList.empty();
+      res.json("Tables Cleared");
+  })
+
 
 
 
