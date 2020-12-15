@@ -28,11 +28,29 @@ app.get("/reserve", function(req, res) {
 
 app.get("/api/tables",function(req,res){
     res.json(tables);
-  })
+  });
 
 app.get("/api/waitlist",function(req,res){
     res.json(waitList);
-})
+  });
+
+app.post("/reserve",function(req,res){
+    var newReservation = req.body;
+    if(tables.length <= 4){
+        tables.push(newReservation);
+        res.json(true);
+    }else{
+        waitList.push(newReservation);
+        res.json(false);
+    }
+    
+  }); 
+
+
+
+
+
+
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
